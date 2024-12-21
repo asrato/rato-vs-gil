@@ -5,31 +5,7 @@ export const StyledContent = styled.div`
     padding: 24px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-auto-columns: 1fr;
     gap: 24px;
-`;
-
-export const StyledCard = styled.div<{ size?: number }>`
-    width: 100%;
-    padding: 32px 24px;
-    border-radius: 16px;
-    background-color: #FFFFFF;
-    grid-column: ${({ size }) => size || 1} span;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-`;
-
-export const CardTitle = styled.span`
-    width: 100%;
-    font-size: 20px;
-    font-weight: 600;
-    color: #000000;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 4px;
 `;
 
 export const LastMatch = styled.div`
@@ -45,12 +21,38 @@ export const LastMatchDate = styled.span`
     position: absolute;
     width: fit-content;
     white-space: nowrap;
-    bottom: -36px;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #0000001F;
     padding: 2px 12px;
     border-radius: 20px;
+    font-size: 14px;
+`;
+
+export const StyledCard = styled.div<{ size?: number, extraPadding?: boolean }>`
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    grid-column: ${({ size }) => size || 1} span;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    ${({ extraPadding }) => extraPadding ? 'padding-bottom: 32px;' : ''}
+`;
+
+export const CardTitle = styled.span`
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
 `;
 
 export const AvatarRato = styled.div`

@@ -12,7 +12,7 @@ export default function Home() {
                 <CustomLoading />
             </LoadingWrapper>}
             {state === 'idle' && <StyledContent>
-                <StyledCard size={2}>
+                <StyledCard extraPadding size={2}>
                     <CardTitle>
                         Last Match
                     </CardTitle>
