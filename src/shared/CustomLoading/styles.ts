@@ -14,7 +14,7 @@ export const Loader = styled.div`
     height: 48px;
     border-radius: 50%;
     display: inline-block;
-    border-top: 4px solid #000000;
+    border-top: 4px solid #FFFFFF;
     border-right: 4px solid transparent;
     box-sizing: border-box;
     animation: ${rotation} 1s linear infinite;
