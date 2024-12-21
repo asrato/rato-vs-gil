@@ -4,7 +4,7 @@ import MainLayout from "./layouts/MainLayout";
 
 export default function Router() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/rato-vs-gil">
             <Routes>
                 <Route path="/" element={<MainLayout />} >
                     <Route index element={<Home />} />

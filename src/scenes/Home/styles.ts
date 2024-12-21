@@ -43,7 +43,7 @@ export const AvatarRato = styled.div`
     width: 80px;
     height: 80px;
     background-color: #efefef;
-    background-image: url('/assets/rato.png');
+    background-image: url('/rato-vs-gil/assets/rato.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +54,7 @@ export const AvatarGil = styled.div`
     width: 80px;
     height: 80px;
     background-color: #efefef;
-    background-image: url('/assets/gil.png');
+    background-image: url('/rato-vs-gil/assets/gil.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
