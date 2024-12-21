@@ -1,10 +1,10 @@
 import CustomLoading from "../../shared/CustomLoading";
-import EightBall from "../../shared/icons/EightBall";
 import useHome from "./hooks";
-import { AvatarGil, AvatarRato, CardTitle, LastMatch, LoadingWrapper, Name, Player, Score, StyledCard, StyledContent } from "./styles";
+import { AvatarGil, AvatarRato, CardTitle, Date, ItemScore, ItemWrapper, LastMatch, LastMatchDate, ListWrapper, LoadingWrapper, Match, Name, Player, Score, StyledCard, StyledContent } from "./styles";
+import { formatDate, getWinnerColor } from "./utils";
 
 export default function Home() {
-    const { lastMatch, state } = useHome();
+    const { lastMatch, matchHistory, state } = useHome();
 
     return (
         <>
@@ -12,9 +12,8 @@ export default function Home() {
                 <CustomLoading />
             </LoadingWrapper>}
             {state === 'idle' && <StyledContent>
-                <StyledCard>
+                <StyledCard size={2}>
                     <CardTitle>
-                        <EightBall width={20} height={20} />
                         Last Match
                     </CardTitle>
                     {lastMatch && <LastMatch>
@@ -29,13 +28,29 @@ export default function Home() {
                             <Name>Gil</Name>
                             <Score>{lastMatch.gil}</Score>
                         </Player>
+                        <LastMatchDate>{formatDate(lastMatch.date)}</LastMatchDate>
                     </LastMatch>}
                 </StyledCard>
-                <StyledCard size={2}>
+                {matchHistory && <StyledCard>
                     <CardTitle>
                         Match History
                     </CardTitle>
-                </StyledCard>
+                    <ListWrapper>
+                        {matchHistory.map((match, index) => <ItemWrapper color={getWinnerColor(match.rato, match.gil)} key={index}>
+                            <Match>
+                                <ItemScore>
+                                    <AvatarRato />
+                                    {match.rato}
+                                </ItemScore>
+                                <ItemScore>
+                                    {match.gil}
+                                    <AvatarGil />
+                                </ItemScore>
+                                <Date>{formatDate(match.date)}</Date>
+                            </Match>
+                        </ItemWrapper>)}
+                    </ListWrapper>
+                </StyledCard>}
             </StyledContent>}
         </>
     );
