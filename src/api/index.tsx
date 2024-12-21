@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Papa from 'papaparse';
-import { ScoreI } from '../scenes/Home/hooks';
+import { ScoreI } from '../scenes/Home/utils';
 
 const fileUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZQu_XS9Iv1mguo_1UyhoLEdBTT7HFJ5e_WS26u9xtuIaWf1EDsBgESMuMsVmEWQ0kUD70_a-LYIBu/pub?gid=0&single=true&output=csv';
 

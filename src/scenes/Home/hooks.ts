@@ -1,12 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchCSVData } from "../../api";
-import { aggregateScoresByDate } from "./utils";
-
-export interface ScoreI {
-    date: string;
-    rato: number;
-    gil: number;
-}
+import { aggregateScoresByDate, ScoreI } from "./utils";
 
 export default function useHome() {
     const [state, setState] = useState<string>('loading');

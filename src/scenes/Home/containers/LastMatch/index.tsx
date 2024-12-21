@@ -1,6 +1,5 @@
 import CustomCard from "../../../../shared/CustomCard";
-import { ScoreI } from "../../hooks";
-import { formatDate } from "../../utils";
+import { formatDate, ScoreI } from "../../utils";
 import { Avatar, AvatarWrapper, Date, InfoWrapper, Name, Player, Score, StyledWrapper } from "./styles";
 
 interface LastMatchI {
