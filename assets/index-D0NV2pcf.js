@@ -149,7 +149,7 @@ License: MIT
     width: 80px;
     height: 80px;
     background-color: #efefef;
-    background-image: url('/assets/rato.png');
+    background-image: url('/rato-vs-gil/assets/rato.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -158,7 +158,7 @@ License: MIT
     width: 80px;
     height: 80px;
     background-color: #efefef;
-    background-image: url('/assets/gil.png');
+    background-image: url('/rato-vs-gil/assets/gil.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -215,4 +215,4 @@ License: MIT
     height: 100%;
     flex: 1;
     background-color: #F6F6F4;
-`;function Q1(){return we.jsxs(W1,{children:[we.jsx(H1,{}),we.jsx(V1,{children:we.jsx(pg,{})})]})}function q1(){return we.jsx(Ug,{children:we.jsx(mg,{children:we.jsx(bu,{path:"/",element:we.jsx(Q1,{}),children:we.jsx(bu,{index:!0,element:we.jsx(j1,{})})})})})}function K1(){return we.jsxs(my,{theme:Ey,children:[we.jsx(Sy,{}),we.jsx(q1,{})]})}g0.createRoot(document.getElementById("root")).render(we.jsx(z.StrictMode,{children:we.jsx(K1,{})}));
+`;function Q1(){return we.jsxs(W1,{children:[we.jsx(H1,{}),we.jsx(V1,{children:we.jsx(pg,{})})]})}function q1(){return we.jsx(Ug,{basename:"/rato-vs-gil",children:we.jsx(mg,{children:we.jsx(bu,{path:"/",element:we.jsx(Q1,{}),children:we.jsx(bu,{index:!0,element:we.jsx(j1,{})})})})})}function K1(){return we.jsxs(my,{theme:Ey,children:[we.jsx(Sy,{}),we.jsx(q1,{})]})}g0.createRoot(document.getElementById("root")).render(we.jsx(z.StrictMode,{children:we.jsx(K1,{})}));
