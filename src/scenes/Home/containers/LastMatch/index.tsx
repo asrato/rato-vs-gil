@@ -1,12 +1,13 @@
+import { MatchI } from "../../../../api/models";
 import CustomCard from "../../../../shared/CustomCard";
-import { formatDate, ScoreI } from "../../utils";
+import { formatDate } from "../../utils";
 import { Avatar, AvatarWrapper, Date, InfoWrapper, Name, Player, Score, StyledWrapper } from "./styles";
 
-interface LastMatchI {
-    data: ScoreI;
+interface LastMatchProps {
+    data: MatchI;
 }
 
-export default function LastMatch(props: LastMatchI) {
+export default function LastMatch(props: LastMatchProps) {
     const { data } = props;
     const { date, gil, rato } = data;
 

@@ -1,12 +1,12 @@
+import { PlayersI } from "../../../../api/models";
 import CustomCard from "../../../../shared/CustomCard";
-import { TotalI } from "../../utils";
 import { Avatar, AvatarWrapper, InfoWrapper, Name, Player, Score, StyledWrapper } from "./styles";
 
-interface TotalScoreI {
-    data: TotalI
+interface TotalScoreProps {
+    data: PlayersI;
 }
 
-export default function TotalScore(props: TotalScoreI) {
+export default function TotalScore(props: TotalScoreProps) {
     const { data } = props;
     const { gil, rato } = data;
 

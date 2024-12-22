@@ -1,24 +1,7 @@
 import { format } from "date-fns";
+import { MatchI, PlayersI, ResultI } from "../../api/models";
 
-export interface ScoreI {
-    date: string;
-    rato: number;
-    gil: number;
-    summary: string[];
-}
-
-export interface ResultI {
-    rato: number;
-    gil: number;
-    summary: string[];
-}
-
-export interface TotalI {
-    rato: number;
-    gil: number;
-}
-
-export function aggregateScoresByDate(data: ScoreI[]): ScoreI[] {
+export function aggregateScoresByDate(data: MatchI[]): MatchI[] {
     const aggregatedData = data.reduce((acc, { date, rato, gil }) => {
         if (!acc[date]) {
             acc[date] = { rato: 0, gil: 0, summary: [] };
@@ -41,7 +24,7 @@ export function formatDate(date: string) {
     return format(date, 'MMM dd, yyyy');
 }
 
-export function calculateTotalScore(data: ScoreI[]): TotalI {
+export function calculateTotalScore(data: MatchI[]): PlayersI {
     return data.reduce(
         (totals, entry) => {
             totals.rato += entry.rato;

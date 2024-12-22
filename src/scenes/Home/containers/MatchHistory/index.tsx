@@ -1,12 +1,13 @@
+import { MatchI } from "../../../../api/models";
 import CustomCard from "../../../../shared/CustomCard";
-import { formatDate, ScoreI } from "../../utils";
+import { formatDate } from "../../utils";
 import { Avatar, AvatarWrapper, Date, Info, Match, Player, Result, Score, StyledList, Summary, SummaryItem } from "./styles";
 
-interface MatchHistoryI {
-    data: ScoreI[];
+interface MatchHistoryProps {
+    data: MatchI[];
 }
 
-export default function MatchHistory(props: MatchHistoryI) {
+export default function MatchHistory(props: MatchHistoryProps) {
     const { data } = props;
     
     return <CustomCard title="Match History">
