@@ -34,7 +34,7 @@ export function aggregateScoresByDate(data: ScoreI[]): ScoreI[] {
         rato: aggregatedData[date].rato,
         gil: aggregatedData[date].gil,
         summary: aggregatedData[date].summary
-    }));
+    })).reverse();
 }
 
 export function formatDate(date: string) {
