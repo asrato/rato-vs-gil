@@ -13,6 +13,11 @@ export interface ResultI {
     summary: string[];
 }
 
+export interface TotalI {
+    rato: number;
+    gil: number;
+}
+
 export function aggregateScoresByDate(data: ScoreI[]): ScoreI[] {
     const aggregatedData = data.reduce((acc, { date, rato, gil }) => {
         if (!acc[date]) {
@@ -32,12 +37,17 @@ export function aggregateScoresByDate(data: ScoreI[]): ScoreI[] {
     }));
 }
 
-export function getWinnerColor(rato: number, gil: number) {
-    if (rato > gil) return '#FA0E0E1F';
-    if (rato < gil) return '#096a001F';
-    return '#0000001F';
-}
-
 export function formatDate(date: string) {
     return format(date, 'MMM dd, yyyy');
+}
+
+export function calculateTotalScore(data: ScoreI[]): TotalI {
+    return data.reduce(
+        (totals, entry) => {
+            totals.rato += entry.rato;
+            totals.gil += entry.gil;
+            return totals;
+        },
+        { rato: 0, gil: 0 }
+    );
 }

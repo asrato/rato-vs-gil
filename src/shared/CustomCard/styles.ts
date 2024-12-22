@@ -17,6 +17,11 @@ export const StyledWrapper = styled.div<{ size: string }>`
             if (size === 'large') return 12;
             return 8;
         }} span;
+        grid-row: ${({ size }) => {
+            if (size === 'small') return 1;
+            if (size === 'large') return 3;
+            return 2;
+        }} span;
     }
 `;
 
