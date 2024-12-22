@@ -42,14 +42,14 @@ export const Name = styled.span`
 export const InfoWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
 `;
 
-export const Score = styled.span`
-    font-size: 24px;
+export const Score = styled.span<{ player: string }>`
+    font-size: 20px;
     font-weight: 600;
-    background-color: ${({ theme }) => theme.lastMatch.score.background};
+    background-color: ${({ player, theme }) => theme.players[player].secondary};
     padding: 2px 8px;
     border-radius: 4px;
     width: fit-content;

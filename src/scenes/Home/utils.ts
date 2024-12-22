@@ -34,3 +34,28 @@ export function calculateTotalScore(data: MatchI[]): PlayersI {
         { rato: 0, gil: 0 }
     );
 }
+
+export function calculateFirstGameWinPercentage(data: MatchI[]): PlayersI {
+    let ratoWins = 0;
+    let gilWins = 0;
+    let totalGames = 0;
+    let lastDate: string | null = null;
+
+    for (const game of data) {
+        if (game.date !== lastDate) {
+            // first game of the match
+            totalGames++;
+            if (game.rato > game.gil) {
+                ratoWins++;
+            } else if (game.gil > game.rato) {
+                gilWins++;
+            }
+            lastDate = game.date; // updates last processed match date
+        }
+    }
+
+    return {
+        rato: Number(((ratoWins / totalGames) * 100).toFixed(2)),
+        gil: Number(((gilWins / totalGames) * 100).toFixed(2))
+    };
+}

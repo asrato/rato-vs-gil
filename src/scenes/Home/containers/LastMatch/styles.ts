@@ -4,10 +4,10 @@ export const StyledWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 32px;
+    gap: 24px;
     align-items: center;
     justify-content: center;
-    margin-top: 12px;
+    padding-top: 12px;
 `;
 
 export const Player = styled.div`
