@@ -20,8 +20,6 @@ const GlobalStyles = createGlobalStyle`
 
 export default GlobalStyles;
 
-export const AppTheme = {
-    navbar: {
-        background: '#004346'
-    }
-};
+export const mediaQueries = {
+    tablet: '@media (min-width: 968px)'
+}

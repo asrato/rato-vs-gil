@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { mediaQueries } from "../../globalStyles";
 
-export const StyledWrapper = styled.div<{ span: number }>`
-    grid-column: ${({ span }) => span} span;
+export const StyledWrapper = styled.div<{ size: string }>`
     padding: 16px 24px;
     border-radius: 6px;
     background-color: #00000030;
@@ -9,6 +9,15 @@ export const StyledWrapper = styled.div<{ span: number }>`
     display: flex;
     flex-direction: column;
     gap: 16px;
+    grid-column: 4 span;
+
+    ${mediaQueries.tablet} {
+        grid-column: ${({ size }) => {
+            if (size === 'small') return 4;
+            if (size === 'large') return 12;
+            return 8;
+        }} span;
+    }
 `;
 
 export const Title = styled.span`

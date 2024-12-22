@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import { mediaQueries } from "../../globalStyles";
 
 export const StyledContent = styled.div`
     width: 100%;
-    padding: 24px;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    
+    ${mediaQueries.tablet} {
+        grid-template-columns: repeat(12, 1fr);
+    }
 `;
 
 export const LoadingWrapper = styled.div`

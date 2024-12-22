@@ -10,7 +10,7 @@ export default function LastMatch(props: LastMatchI) {
     const { data } = props;
     const { date, gil, rato } = data;
 
-    return <CustomCard title="Last Match">
+    return <CustomCard title="Last Match" size="small">
         <StyledWrapper>
             <Player>
                 <AvatarWrapper color="#ff4c4c">

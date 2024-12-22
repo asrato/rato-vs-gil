@@ -9,7 +9,7 @@ interface MatchHistoryI {
 export default function MatchHistory(props: MatchHistoryI) {
     const { data } = props;
     
-    return <CustomCard span={8} title="Match History">
+    return <CustomCard title="Match History">
         <StyledList>
             {data.map((match, index) => <Match key={index}>
                 <Info>

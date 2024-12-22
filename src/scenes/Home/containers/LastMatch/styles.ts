@@ -4,9 +4,9 @@ export const StyledWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 32px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 12px;
 `;
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mediaQueries } from "../../../../globalStyles";
 
 export const StyledList = styled.div`
     width: 100%;
@@ -12,7 +13,7 @@ export const Match = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 24px;
     padding: 12px 0;
 
     &:not(:last-child) {
@@ -22,9 +23,14 @@ export const Match = styled.div`
 
 export const Info = styled.div`
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 32px;
+    gap: 8px;
+    flex-direction: column;
+    
+    ${mediaQueries.tablet} {
+        flex-direction: row;
+        gap: 32px;
+    }
 `;
 
 export const Score = styled.div`
@@ -87,8 +93,10 @@ export const Result = styled.span<{ color: string, isLeft?: boolean }>`
 export const Summary = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     gap: 4px;
+    justify-content: flex-end;
 `;
 
 export const SummaryItem = styled.span<{ color: string }>`

@@ -8,7 +8,7 @@ export const StyledMain = styled.main`
     align-items: center;
     background-color: #111111;
     color: #e9e9e9;
-    padding: 0 24px;
+    padding: 24px;
 `;
 
 export const StyledContent = styled.section`
