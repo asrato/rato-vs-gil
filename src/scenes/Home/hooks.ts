@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchCSVData } from "../../api";
-import { aggregateScoresByDate, calculateFirstGameWinPercentage, calculateMeanWinPercentage, calculateTotalScore } from "./utils";
+import { aggregateScoresByDate, calculateFirstGameWinPercentage, calculateTotalScore } from "./utils";
 import { MatchI } from "../../api/models";
 
 export default function useHome() {
@@ -17,16 +17,14 @@ export default function useHome() {
     }, [state]);
 
     const matchHistory = useMemo(() => aggregateScoresByDate(data), [data]);
-    const lastMatch = useMemo(() => matchHistory.at(-1), [matchHistory]);
+    const lastMatch = useMemo(() => matchHistory.at(0), [matchHistory]);
     const totalScore = useMemo(() => calculateTotalScore(data), [data]);
     const firstGames = useMemo(() => calculateFirstGameWinPercentage(data), [data]);
-    const percentageOfWinsPerMatch = useMemo(() => calculateMeanWinPercentage(matchHistory), [matchHistory]);
 
     return {
         firstGames,
         lastMatch,
         matchHistory,
-        percentageOfWinsPerMatch,
         state,
         totalScore
     };
