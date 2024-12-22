@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
         width: 100dvw;
         height: 100dvh;
         font-family: "Montserrat", sans-serif;
+        background-color: ${({ theme }) => theme.mainLayout.background};
     }
 
     #root {

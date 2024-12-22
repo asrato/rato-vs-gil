@@ -8,11 +8,12 @@ export const StyledMain = styled.main`
     align-items: center;
     background-color: ${({ theme }) => theme.mainLayout.background};
     color: ${({ theme }) => theme.mainLayout.color};
-    padding: 24px;
-`;
+    `;
 
 export const StyledContent = styled.section`
     width: 100%;
+    overflow-y: auto;
     height: 100%;
     max-width: 1200px;
+    padding: 24px;
 `;
