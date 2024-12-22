@@ -59,3 +59,29 @@ export function calculateFirstGameWinPercentage(data: MatchI[]): PlayersI {
         gil: Number(((gilWins / totalGames) * 100).toFixed(2))
     };
 }
+
+export function calculateMeanWinPercentage(data: MatchI[]): { rato: number; gil: number } {
+    const percentages = data.map(({ rato, gil }) => {
+        const total = rato + gil;
+        return {
+            rato: (total > 0 ? (rato / total) * 100 : 0),
+            gil: (total > 0 ? (gil / total) * 100 : 0),
+        };
+    });
+
+    const totalPercentages = percentages.reduce(
+        (acc, { rato, gil }) => {
+            acc.rato += rato;
+            acc.gil += gil;
+            return acc;
+        },
+        { rato: 0, gil: 0 }
+    );
+
+    const numMatches = data.length;
+
+    return {
+        rato: Number((totalPercentages.rato / numMatches).toFixed(0)),
+        gil: Number((totalPercentages.gil / numMatches).toFixed(0)),
+    };
+}
