@@ -16,21 +16,21 @@ export default function MatchHistory(props: MatchHistoryI) {
                     <Date>{formatDate(match.date)}</Date>
                     <Score>
                         <Player>
-                            <AvatarWrapper color="#ff4c4c">
+                            <AvatarWrapper player="rato">
                                 <Avatar src="/rato-vs-gil/assets/rato.png" />
                             </AvatarWrapper>
-                            <Result isLeft color="#ff4c4c8f">{match.rato}</Result>
+                            <Result left player="rato">{match.rato}</Result>
                         </Player>
                         <Player>
-                            <Result color="#6d4cff8f">{match.gil}</Result>
-                            <AvatarWrapper color="#6d4cff">
+                            <Result player="gil">{match.gil}</Result>
+                            <AvatarWrapper player="gil">
                                 <Avatar src="/rato-vs-gil/assets/gil.png" />
                             </AvatarWrapper>
                         </Player>
                     </Score>
                 </Info>
                 <Summary>
-                    {match.summary.map((item, index) => <SummaryItem key={index} color={item === 'rato' ? '#ff4c4c' : '#6d4cff'} />)}
+                    {match.summary.map((item, index) => <SummaryItem key={index} player={item} />)}
                 </Summary>
             </Match>)}
         </StyledList>

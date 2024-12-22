@@ -16,14 +16,14 @@ export const Player = styled.div`
     gap: 8px;
 `;
 
-export const AvatarWrapper = styled.div<{ color: string }>`
+export const AvatarWrapper = styled.div<{ player: string }>`
     width: 48px;
     height: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    background-color: ${({ color }) => color};
+    background-color: ${({ player, theme }) => theme.players[player].primary };
     border-radius: 50%;
 `;
 
@@ -49,7 +49,7 @@ export const InfoWrapper = styled.div`
 export const Score = styled.span`
     font-size: 24px;
     font-weight: 600;
-    background-color: #FFFFFF20;
+    background-color: ${({ theme }) => theme.lastMatch.score.background};
     padding: 2px 8px;
     border-radius: 4px;
     width: fit-content;
@@ -59,5 +59,5 @@ export const Date = styled.span`
     text-align: center;
     font-size: 10px;
     font-weight: 500;
-    color: #FFFFFF60
+    color: ${({ theme }) => theme.lastMatch.date.color};
 `;

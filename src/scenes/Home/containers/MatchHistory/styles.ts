@@ -17,7 +17,7 @@ export const Match = styled.div`
     padding: 12px 0;
 
     &:not(:last-child) {
-        border-bottom: solid 1px #ffffff08;
+        border-bottom: solid 1px ${({ theme }) => theme.matchHistory.border};
     }
 `;
 
@@ -46,14 +46,14 @@ export const Player = styled.div`
     align-items: center;
 `;
 
-export const AvatarWrapper = styled.div<{ color: string }>`
+export const AvatarWrapper = styled.div<{ player: string }>`
     width: 32px;
     height: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    background-color: ${({ color }) => color};
+    background-color: ${({ player, theme }) => theme.players[player].primary};
     border-radius: 50%;
     z-index: 1;
 `;
@@ -68,15 +68,15 @@ export const Date = styled.span`
     text-align: center;
     font-size: 12px;
     font-weight: 400;
-    color: #FFFFFF90;
+    color: ${({ theme }) => theme.matchHistory.date.color};
 `;
 
-export const Result = styled.span<{ color: string, isLeft?: boolean }>`
-    background-color: ${({ color }) => color};
+export const Result = styled.span<{ player: string, left?: boolean }>`
+    background-color: ${({ player, theme }) => theme.players[player].secondary};
     font-size: 14px;
     font-weight: 600;
-    ${({ isLeft }) => {
-        if (isLeft)
+    ${({ left }) => {
+        if (left)
             return `
                 margin-left: -12px;
                 padding: 2px 6px 2px 16px;
@@ -99,9 +99,9 @@ export const Summary = styled.div`
     justify-content: flex-end;
 `;
 
-export const SummaryItem = styled.span<{ color: string }>`
+export const SummaryItem = styled.span<{ player: string }>`
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: ${({ color }) => color};
+    background-color: ${({ player, theme }) => theme.players[player].primary};
 `;

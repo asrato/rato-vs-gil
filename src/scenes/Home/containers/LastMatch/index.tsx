@@ -13,7 +13,7 @@ export default function LastMatch(props: LastMatchI) {
     return <CustomCard title="Last Match" size="small">
         <StyledWrapper>
             <Player>
-                <AvatarWrapper color="#ff4c4c">
+                <AvatarWrapper player="rato">
                     <Avatar src="/rato-vs-gil/assets/rato.png" />
                 </AvatarWrapper>
                 <Name>Rato</Name>
@@ -23,7 +23,7 @@ export default function LastMatch(props: LastMatchI) {
                 <Date>{formatDate(date)}</Date>
             </InfoWrapper>
             <Player>
-                <AvatarWrapper color="#6d4cff">
+                <AvatarWrapper player="gil">
                     <Avatar src="/rato-vs-gil/assets/gil.png" />
                 </AvatarWrapper>
                 <Name>Gil</Name>
