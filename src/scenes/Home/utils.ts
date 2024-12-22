@@ -85,3 +85,27 @@ export function calculateMeanWinPercentage(data: MatchI[]): { rato: number; gil:
         gil: Number((totalPercentages.gil / numMatches).toFixed(0)),
     };
 }
+
+export function calculateHighestWinStreak(data: MatchI[]): PlayersI {
+    const streaks = { rato: 0, gil: 0 };
+
+    for (const match of data) {
+        let currentStreakRato = 0, currentStreakGil = 0;
+
+        for (const player of match.summary) {
+            if (player === 'rato') {
+                currentStreakRato++;
+                currentStreakGil = 0;  // Reset Gil's streak if Rato wins
+            } else if (player === 'gil') {
+                currentStreakGil++;
+                currentStreakRato = 0;  // Reset Rato's streak if Gil wins
+            }
+
+            // Update the highest streak for each player if necessary
+            streaks.rato = Math.max(streaks.rato, currentStreakRato);
+            streaks.gil = Math.max(streaks.gil, currentStreakGil);
+        }
+    }
+
+    return streaks;
+}
