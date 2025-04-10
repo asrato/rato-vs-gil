@@ -2,7 +2,7 @@ import axios from 'axios';
 import Papa from 'papaparse';
 import { MatchI } from './models';
 
-const fileUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQZQu_XS9Iv1mguo_1UyhoLEdBTT7HFJ5e_WS26u9xtuIaWf1EDsBgESMuMsVmEWQ0kUD70_a-LYIBu/pub?gid=0&single=true&output=csv';
+const fileUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4F_b_bTV96TxtijYvhWHPjBIVhbhN6idOJRou50noE7O60fS4PNM6VPp0HE0c1g/pub?gid=0&single=true&output=csv';
 
 export async function fetchCSVData(): Promise<MatchI[]> {
     const response = await axios.get(fileUrl);
