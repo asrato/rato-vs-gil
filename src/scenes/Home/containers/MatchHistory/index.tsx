@@ -10,7 +10,7 @@ interface MatchHistoryProps {
 export default function MatchHistory(props: MatchHistoryProps) {
     const { data } = props;
     
-    return <CustomCard title="Match History">
+    return <CustomCard title="Match History" size="large">
         <StyledList>
             {data.map((match, index) => <Match key={index}>
                 <Info>

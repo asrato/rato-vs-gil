@@ -16,11 +16,11 @@ export default function Home() {
                 <CustomLoading />
             </LoadingWrapper>}
             {state === 'idle' && <StyledContent>
-                {lastMatch && <LastMatch data={lastMatch} />}
-                {matchHistory && <MatchHistory data={matchHistory} />}
                 {totalScore && <TotalScore data={totalScore} />}
+                {lastMatch && <LastMatch data={lastMatch} />}
                 {firstGames && <FirstGameWinPercentage data={firstGames} />}
                 {highestWinsInARow && <HighestWinsInARow data={highestWinsInARow} />}
+                {matchHistory && <MatchHistory data={matchHistory} />}
             </StyledContent>}
         </>
     );

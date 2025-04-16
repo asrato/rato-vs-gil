@@ -22,7 +22,8 @@ const GlobalStyles = createGlobalStyle`
 export default GlobalStyles;
 
 export const mediaQueries = {
-    tablet: '@media (min-width: 968px)'
+    tablet: '@media (min-width: 768px) and (max-width: 1199px)',
+    desktop: '@media (min-width: 1200px)'
 };
 
 export const theme = {

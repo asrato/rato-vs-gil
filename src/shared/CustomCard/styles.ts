@@ -14,6 +14,19 @@ export const StyledWrapper = styled.div<{ size: string }>`
     ${mediaQueries.tablet} {
         grid-column: ${({ size }) => {
             if (size === 'small') return 4;
+            if (size === 'large') return 8;
+            return 8;
+        }} span;
+        grid-row: ${({ size }) => {
+            if (size === 'small') return 1;
+            if (size === 'large') return 3;
+            return 2;
+        }} span;
+    }
+
+    ${mediaQueries.desktop} {
+        grid-column: ${({ size }) => {
+            if (size === 'small') return 6;
             if (size === 'large') return 12;
             return 8;
         }} span;

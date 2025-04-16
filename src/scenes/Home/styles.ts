@@ -8,6 +8,10 @@ export const StyledContent = styled.div`
     grid-template-columns: repeat(4, 1fr);
     
     ${mediaQueries.tablet} {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    ${mediaQueries.desktop} {
         grid-template-columns: repeat(12, 1fr);
     }
 `;
